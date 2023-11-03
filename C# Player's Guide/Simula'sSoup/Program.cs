@@ -19,9 +19,9 @@ FoodTypes PickFoodType()
 
     FoodTypes typeChoice = numberChoice switch
     {
-        1 => typeChoice = FoodTypes.Gumbo,
-        2 => typeChoice = FoodTypes.Soup,
-        3 => typeChoice = FoodTypes.Stew,
+        1 => FoodTypes.Gumbo,
+        2 => FoodTypes.Soup,
+        3 => FoodTypes.Stew,
     };
     return typeChoice;
 }
@@ -37,10 +37,10 @@ FoodMainIngredient PickFoodMainIngredient()
 
     FoodMainIngredient ingredientChoice = numberChoice switch
     {
-        1 => ingredientChoice = FoodMainIngredient.Mushroom,
-        2 => ingredientChoice = FoodMainIngredient.Chicken,
-        3 => ingredientChoice = FoodMainIngredient.Carrot,
-        4 => ingredientChoice = FoodMainIngredient.Potato,
+        1 => FoodMainIngredient.Mushroom,
+        2 => FoodMainIngredient.Chicken,
+        3 => FoodMainIngredient.Carrot,
+        4 => FoodMainIngredient.Potato,
     };
     return ingredientChoice;
 }
@@ -55,9 +55,9 @@ FoodSeasoning PickFoodSeasoning()
 
     FoodSeasoning seasoningChoice = numberChoice switch
     {
-        1 => seasoningChoice = FoodSeasoning.Spicy,
-        2 => seasoningChoice = FoodSeasoning.Salty,
-        3 => seasoningChoice = FoodSeasoning.Sweet,
+        1 => FoodSeasoning.Spicy,
+        2 => FoodSeasoning.Salty,
+        3 => FoodSeasoning.Sweet,
     };
     return seasoningChoice;
         
