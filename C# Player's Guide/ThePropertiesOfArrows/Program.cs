@@ -1,4 +1,4 @@
-﻿Console.Title = "Vin Fletcher's Arrow";
+﻿Console.Title = "The Properties of Arrows";
 
 Console.WriteLine("Let's Build an arrow!");
 ArrowheadType myArrowhead = PickArrowheadType();
