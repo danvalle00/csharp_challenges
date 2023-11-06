@@ -157,6 +157,7 @@ class Board
     
 }
   
+
 class BoardRender
 {
     public void UpdateBoard(Board board)
@@ -192,3 +193,4 @@ class BoardSquare
     }
 }
 public enum Cell { Empty, X, O}        
+
