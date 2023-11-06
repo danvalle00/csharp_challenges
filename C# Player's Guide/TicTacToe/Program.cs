@@ -1,5 +1,4 @@
 ﻿Console.Title = "Tic-Tac-Toe";
-
 new TicTacToe().Run(); 
 
 class TicTacToe
@@ -70,7 +69,6 @@ class TicTacToe
 class Player
 {
     public Cell PlayerMark { get; }
-    
     
     public Player(Cell playerMark)
     {
@@ -159,7 +157,6 @@ class Board
     
 }
   
-
 class BoardRender
 {
     public void UpdateBoard(Board board)
@@ -195,4 +192,3 @@ class BoardSquare
     }
 }
 public enum Cell { Empty, X, O}        
-
