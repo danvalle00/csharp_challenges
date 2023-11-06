@@ -38,7 +38,7 @@ public class Robot
 public interface IRobotCommand
 {
     void Run(Robot robot);
-}
+} 
 
 class OnCommand : IRobotCommand
 {
