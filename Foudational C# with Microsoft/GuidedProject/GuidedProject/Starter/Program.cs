@@ -2,68 +2,113 @@
 
 int currentAssignments = 5;
 
-int[] sophiaScores = { 90, 86, 87, 98, 100 };
-int[] andrewScores = { 92, 89, 81, 96, 90 };
-int[] emmaScores = { 90, 85, 87, 98, 68 };
-int[] loganScores = { 90, 95, 87, 88, 96 };
+int[] sophiaScores = { 90, 86, 87, 98, 100, 94, 90 };
+int[] andrewScores = { 92, 89, 81, 96, 90, 89 };
+int[] emmaScores = { 90, 85, 87, 98, 68, 89, 89, 89 };
+int[] loganScores = { 90, 95, 87, 88, 96, 96 };
 
 string[] studentsNames = { "Sophia", "Andrew", "Emma", "Logan" };
+string currentStudentLetterGrade = "";
 
-int sophiaSum = 0;
-int andrewSum = 0;
-int emmaSum = 0;
-int loganSum = 0;
+int[] studentScores = new int[10];
 
 
 foreach (string studentName in studentsNames)
 {
+    string currentStudent = studentName;
     switch (studentName)
     {
         case "Sophia":
-            foreach (int score in sophiaScores)
-            {
-                sophiaSum += score;
-            }
+            studentScores = sophiaScores;
             break;
         case "Andrew":
-            foreach (int score in andrewScores)
-            {
-                andrewSum += score;
-            }
+            studentScores = andrewScores;
             break;
         case "Emma":
-            foreach (int score in emmaScores)
-            {
-                emmaSum += score;
-            }
+            studentScores = emmaScores;
             break;
         case "Logan":
-            foreach (int score in loganScores)
-            {
-                loganSum += score;
-            }
+            studentScores = loganScores;
             break;
     }
+    int sumAssignmentScores = 0;
+
+    decimal currentStudentGrade = 0;
+
+    int gradedAssignments = 0;
+
+    foreach (int score in studentScores)
+    {
+        gradedAssignments += 1;
+
+        if (gradedAssignments <= currentAssignments)
+        {
+            sumAssignmentScores += score;
+        }
+        else
+        {
+            sumAssignmentScores += score / 10;
+        }
+
+    }
+
+    currentStudentGrade = (decimal)sumAssignmentScores / currentAssignments;
+
+    if (currentStudentGrade >= 97)
+    {
+        currentStudentLetterGrade = "A+";
+    }
+    else if (currentStudentGrade >= 93)
+    {
+        currentStudentLetterGrade = "A";
+    }
+    else if (currentStudentGrade >= 90)
+    {
+        currentStudentLetterGrade = "A-";
+    }
+    else if (currentStudentGrade >= 87)
+    {
+        currentStudentLetterGrade = "B+";
+    }
+    else if (currentStudentGrade >= 83)
+    {
+        currentStudentLetterGrade = "B";
+    }
+    else if (currentStudentGrade >= 80)
+    {
+        currentStudentLetterGrade = "B-";
+    }
+    else if (currentStudentGrade >= 77)
+    {
+        currentStudentLetterGrade = "C+";
+    }
+    else if (currentStudentGrade >= 73)
+    {
+        currentStudentLetterGrade = "C";
+    }
+    else if (currentStudentGrade >= 70)
+    {
+        currentStudentLetterGrade = "C-";
+    }
+    else if (currentStudentGrade >= 67)
+    {
+        currentStudentLetterGrade = "D+";
+    }
+    else if (currentStudentGrade >= 63)
+    {
+        currentStudentLetterGrade = "D";
+    }
+    else if (currentStudentGrade >= 60)
+    {
+        currentStudentLetterGrade = "D-";
+    }
+    else
+    {
+        currentStudentLetterGrade = "F";
+    }
+    Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
 
 }
-
-decimal sophiaScore;
-decimal andrewScore;
-decimal emmaScore;
-decimal loganScore;
-
-
-
-sophiaScore = (decimal)sophiaSum / currentAssignments;
-andrewScore = (decimal)andrewSum / currentAssignments;
-emmaScore = (decimal)emmaSum / currentAssignments;
-loganScore = (decimal)loganSum / currentAssignments;
-
-Console.WriteLine("Student\t\tGrade\n");
-Console.WriteLine("Sophia:\t\t" + sophiaScore + "\tA-");
-Console.WriteLine("Andrew:\t\t" + andrewScore + "\tB+");
-Console.WriteLine("Emma:\t\t" + emmaScore + "\tB");
-Console.WriteLine("Logan:\t\t" + loganScore + "\tA-");
 
 Console.WriteLine("Press the Enter key to continue");
 Console.ReadLine();
